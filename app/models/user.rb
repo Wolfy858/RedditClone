@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   validates :hashed_password, presence: true
   validate :password_present?
 
+  has_many :subs, foreign_key: :moderator_id
+
   def self.authenticate(username, password)
     @user = User.find_by(username: username)
     return @user if @user && @user.password == password
