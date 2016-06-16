@@ -1,0 +1,23 @@
+<div id="user-registration">
+  <div id="errors">
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+  <div>
+
+  <h1>CREATE A NEW ACCOUNT</h1>
+
+
+  <form id="new_user_form" method='POST' action='/users'>
+    <input type="text" name="user[username]" placeholder="choose a username"/>
+    <br><br>
+    <input type="password" name="user[password]" placeholder="Password"/>
+    <br><br>
+    <input type="text" name="user[email]" placeholder="Email"/>
+    <br><br>
+    <!-- all forms must have a getting data must have button -->
+    <input type="submit" value="SIGN UP" />
+  </form>
+</div>
