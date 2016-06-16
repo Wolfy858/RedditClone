@@ -10,12 +10,12 @@ end
 
 post '/sessions' do
   # user = User.find_by(email: params[:user][:email])
-  user = User.authenticate(params[:user][:email], params[:user][:password])
+  user = User.authenticate(params[:user][:username], params[:user][:password])
 
   # if user && user.password == params[:user][:password]
   if user
     session[:user_id] = user.id
-    redirect "/restaurants"
+    redirect "/subs"
   else
     status 422
     @errors = ["Sorry, the credentials provided do not match."]

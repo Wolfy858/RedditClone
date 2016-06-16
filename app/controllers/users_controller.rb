@@ -15,7 +15,7 @@ post '/users' do
   if user.valid?
     #success
     session[:user_id] = user.id
-    redirect "/restaurants"
+    redirect "/subs"
   else
     #failure message
     status 422
@@ -27,5 +27,5 @@ end
 # LOGOUT
 delete '/logout' do
   session.delete(:user_id)
-  redirect '/'
+  redirect '/subs'
 end
