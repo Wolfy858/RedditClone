@@ -16,4 +16,3 @@ get '/subs/:id' do
   @sub = Sub.find(params[:id])
   erb :"/subs/show"
 end
-
