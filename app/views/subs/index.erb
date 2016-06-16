@@ -1,0 +1,8 @@
+<h2>All Subs</h2>
+<nav>
+  <% @subs.each do |sub| %>
+    <a href="/subs/<%= sub.id %>"><%= sub.title %></a>
+  <% end %>
+</nav>
+
+<a href="/subs/new">Create sub</a>
