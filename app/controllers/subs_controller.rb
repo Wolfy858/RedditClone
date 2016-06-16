@@ -45,4 +45,3 @@ patch "/subs/:id" do
     erb :"/subs/edit"
   end
 end
-

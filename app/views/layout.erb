@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -18,6 +18,32 @@
   <title></title>
 </head>
 <body>
+  <div>
+  <ul>
+    <li><a class="active" href="#home">Reddit Clone</a></li>
+    <!-- <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li> -->
+
+    <!-- <li style="float:right"><a href="#about">About</a></li> -->
+
+
+    <% if logged_in? %>
+  <!-- LOGOUT: fix the look -->
+      <li style="float:right">
+        <form method="post" action="/logout">
+          <input type="hidden" name="_method" value="delete" />
+          <input id="logout" type="submit" value="Log Out" />
+        </form>
+      </li>
+
+      <li style="float:right"><a class="active" href="/restaurants/index">Welcome: <%= current_user.email %></a></li>
+    <% else %>
+      <li style="float:right"><a class="active" href="/sessions/new">Login</a></li>
+      <li style="float:right"><a class="active" href="/users/new">Register</a></li>
+    <% end %>
+  </ul>
+  </div>
+
   <%= yield %>
 </body>
 </html>
