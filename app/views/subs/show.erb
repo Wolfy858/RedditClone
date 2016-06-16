@@ -1,8 +1,10 @@
 <h2><%= @sub.title %></h2>
 
+<% @sub.posts.each do |post| %>
+  <%= post.title %>
+<% end %>
 
 
-
-<!-- <%# if current_user == @sub.moderator %> -->
+<% if current_user == @sub.moderator %>
   <a href="/subs/<%= @sub.id %>/edit">Edit</a>
- <!-- <%# end %> -->
+<% end %>

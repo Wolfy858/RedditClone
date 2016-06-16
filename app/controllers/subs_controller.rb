@@ -13,10 +13,10 @@ get '/subs/new' do
 end
 
 post '/subs' do
-  @sub = Sub.create(params[:sub])
+  @sub = Sub.new(params[:sub])
   @sub.moderator = current_user
 
-  if @sub.valid?
+  if @sub.save
     redirect '/subs'
   else
     erb :'/subs/new'
