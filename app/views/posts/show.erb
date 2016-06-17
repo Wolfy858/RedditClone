@@ -10,7 +10,15 @@
 <h3>Comments</h3>
 
 <% @post.comments.each do |comment| %>
-  <%= comment.content %>
+  <article>
+    <%= comment.content %>
+    <%= comment.karma %>
+    <form action="/comments/<%= comment.id %>/vote" method="POST">
+      <button type="submit" name="upvote" value="true">/\</button>
+      <button type="submit" name="upvote" value="false">\/</button>
+    </form>
+
+  </article>
 <% end %>
 
 
