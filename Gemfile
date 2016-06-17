@@ -14,7 +14,7 @@ gem 'rake'
 gem 'pry'
 gem 'bcrypt'
 
-gem 'shotgun'
+
 
 gem 'bitly'
 
@@ -28,4 +28,5 @@ end
 group :test, :development do
   gem 'factory_girl'
   gem 'faker'
+  gem 'shotgun'
 end
