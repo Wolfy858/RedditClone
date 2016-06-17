@@ -20,7 +20,7 @@
 <body>
   <div>
   <ul>
-    <li><a class="active" href="#home">Reddit Clone</a></li>
+    <li><a class="active" href="/subs">Reddit Clone</a></li>
     <!-- <li><a href="#news">News</a></li>
     <li><a href="#contact">Contact</a></li> -->
 
@@ -36,7 +36,7 @@
         </form>
       </li>
 
-      <li style="float:right"><a class="active" href="/restaurants/index">Welcome: <%= current_user.email %></a></li>
+      <li style="float:right"><a class="active" href="/subs">Welcome: <%= current_user.username %></a></li>
     <% else %>
       <li style="float:right"><a class="active" href="/sessions/new">Login</a></li>
       <li style="float:right"><a class="active" href="/users/new">Register</a></li>

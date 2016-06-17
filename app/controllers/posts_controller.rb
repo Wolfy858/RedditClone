@@ -22,3 +22,19 @@ get "/subs/:sub_id/posts/:id" do
   erb :"/posts/show"
 end
 
+get '/subs/:sub_id/posts/:id/edit' do
+  @post = Post.find(params[:id])
+  erb :'/posts/edit'
+end
+
+patch "/subs/:sub_id/posts/:id" do
+  @post = Post.find(params[:id])
+  @post.update(params[:post])
+
+  if @post.valid?
+    redirect "/subs/#{@post.sub.id}/posts/#{@post.id}"
+  else
+    erb :"/posts/edit"
+  end
+end
+
