@@ -8,11 +8,13 @@ get '/subs' do
 end
 
 get '/subs/new' do
+  redirect '/sessons/new' unless logged_in?
   @sub = Sub.new
   erb :'/subs/new'
 end
 
 post '/subs' do
+  redirect '/sessons/new' unless logged_in?
   @sub = Sub.new(params[:sub])
   @sub.moderator = current_user
 

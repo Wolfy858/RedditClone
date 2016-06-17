@@ -1,5 +1,5 @@
 <h2>Create a new Post</h2>
-<form action='/posts' method="POST">
+<form action="/subs/<%= @sub.id %>/posts" method="POST">
 
   <%= erb :"posts/_posts_form" %>
   <input type="submit" value="create post">
