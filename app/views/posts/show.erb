@@ -1,8 +1,17 @@
+<div class="voteable-data">
 <h2><%= @post.title %></h2>
-<% if @post.url %>
+<p class="karma">Karma: <%= @post.karma %></p>
+ <form  action="/posts/<%= @post.id %>/votes" method="POST">
+      <button class="vote-button upvote-button" type="submit" name="upvote" value="true">/\</button>
+      <button class="vote-button" type="submit" name="" value="false">\/</button>
+</form>
+</div>
+
+<% unless @post.url == "" %>
   <a href="http://<%= @post.url %>">Link</a>
 <% end %>
 <p><%= @post.content %></p>
+
 
 <h3>Post a comment</h3>
 <%= erb :'/comments/_comment_form' %>
@@ -10,7 +19,15 @@
 <h3>Comments</h3>
 
 <% @post.comments.each do |comment| %>
-  <%= comment.content %>
+  <article class='voteable-data'>
+    <%= comment.content %>
+    <p class="karma">Karma: <%= comment.karma %></p>
+    <form action="/comments/<%= comment.id %>/votes" method="POST">
+      <button class="vote-button upvote-button" type="submit" name="upvote" value="true">/\</button>
+      <button class="vote-button" type="submit" name="upvote" value="false">\/</button>
+    </form>
+
+  </article>
 <% end %>
 
 
