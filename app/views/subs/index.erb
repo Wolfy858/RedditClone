@@ -5,4 +5,7 @@
   <% end %>
 </nav>
 
-<a href="/subs/new">Create sub</a>
+<% if logged_in? %>
+  <a href="/subs/new">Create Sub</a>
+<% end %>
+
