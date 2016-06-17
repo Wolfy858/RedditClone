@@ -7,8 +7,8 @@ gem 'pg'
 gem 'sinatra'
 gem 'sinatra-contrib'
 
-gem 'activesupport', '~>4.2.0'
-gem 'activerecord', '~>4.2.0'
+gem 'activesupport', '~>4.2.6'
+gem 'activerecord', '~>4.2.6'
 
 gem 'rake'
 gem 'pry'
