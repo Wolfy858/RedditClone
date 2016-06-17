@@ -1,7 +1,26 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $(".vote-button").click(function(event){
+    event.preventDefault();
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+    var web_address= $(this).closest('form').attr("action");
+
+    var upvote_status = $(this).hasClass("upvote-button");
+    var self = this;
+
+    var data= { upvote: !!upvote_status};
+    console.log(data);
+
+    var request = $.ajax({
+      url: web_address,
+      method: "POST",
+      data: data
+    });
+
+    request.done(function(response){
+      console.log(response);
+      var js_object = JSON.parse(response);
+      $(self).closest(".post-data").find(".karma").text("Karma: "+js_object.karma);
+    });
+
+  })
 });

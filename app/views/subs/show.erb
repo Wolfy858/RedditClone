@@ -1,9 +1,17 @@
 <h2><%= @sub.title %></h2>
 
+<ol>
 <% @sub.posts.each do |post| %>
-  <a href="/subs/<%= @sub.id %>/posts/<%= post.id %>"><%= post.title %></a>
+  <article class="post-data">
+    <li><a href="/subs/<%= @sub.id %>/posts/<%= post.id %>"><%= post.title %></a></li>
+    <p class="karma">Karma: <%= post.karma %></p>
+    <form action="/posts/<%= post.id %>/votes" method="POST">
+      <button class="vote-button upvote-button" type="submit" name="upvote" value="true">/\</button>
+      <button class="vote-button" type="submit" name="upvote" value="false">\/</button>
+    </form>
+  </article>
 <% end %>
-
+</ol>
 <br>
 
 <% if current_user == @sub.moderator %>
