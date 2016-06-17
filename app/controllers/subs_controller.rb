@@ -27,6 +27,9 @@ end
 
 get '/subs/:id' do
   @sub = Sub.find(params[:id])
+  @posts = @sub.posts.sort do |post1, post2|
+    post2.karma <=> post1.karma
+  end
   erb :"/subs/show"
 end
 

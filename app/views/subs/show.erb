@@ -3,7 +3,7 @@
 <p><%= @sub.description %></p>
 
 <ol>
-<% @sub.posts.each do |post| %>
+<% @posts.each do |post| %>
   <article class="voteable-data">
     <li><a href="/subs/<%= @sub.id %>/posts/<%= post.id %>"><%= post.title %></a></li>
     <p class="karma">Karma: <%= post.karma %></p>

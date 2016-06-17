@@ -6,11 +6,9 @@
       <button class="vote-button" type="submit" name="" value="false">\/</button>
 </form>
 </div>
-<% puts "=====================" %>
-<% unless @post.url == "" %>
+
 
   <a href="<%= @post.shortened_url.short_url %>"><%= @post.shortened_url.short_url %></a>
-<% end %>
 <p><%= @post.content %></p>
 
 

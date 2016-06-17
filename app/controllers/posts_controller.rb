@@ -19,6 +19,9 @@ end
 
 get "/subs/:sub_id/posts/:id" do
   @post = Post.find(params[:id])
+  @comments = @post.comments.sort do |comment1, comment2|
+    comment2.karma <=> comment1.karma
+  end
   erb :"/posts/show"
 end
 
