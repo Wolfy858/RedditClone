@@ -1,0 +1,8 @@
+<h2>Edit Post <%= @post.title %></h2>
+
+<form action="/subs/<%= @post.sub.id %>/posts/<%= @post.id %>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+
+  <%= erb :"posts/_posts_form" %>
+  <input type="submit" value="update post">
+</form>

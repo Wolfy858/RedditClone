@@ -1,4 +1,4 @@
-<form id="new-comment" method='post' action='/subs/posts/:post_id/comments'>
-  <textarea name="comment[content]" rows="10" cols="50"></textarea><br><br>
-  <input type="submit" value="Submit Review">
+<form id="new-comment" method='post' action='/subs/posts/<%= @post.id %>/comments'>
+  <textarea name="content" rows="10" cols="50"></textarea><br><br>
+  <input type="submit" value="Submit Comment">
 </form>
