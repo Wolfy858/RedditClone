@@ -1,8 +1,10 @@
 <h2>All Subs</h2>
 <nav>
+<ul>
   <% @subs.each do |sub| %>
-    <a href="/subs/<%= sub.id %>"><%= sub.title %></a>
+    <li><a href="/subs/<%= sub.id %>"><%= sub.title %></a></li>
   <% end %>
+</ul>
 </nav>
 
 <% if logged_in? %>

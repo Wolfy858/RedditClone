@@ -1,3 +1,10 @@
+<% if @post.errors.any? %>
+  <% @post.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+<% end %>
+<br>
+
 <label for="post[title]">Post title</label>
 <input type="text" name="post[title]" value="<%= @post.title %>"><br>
 <label for=post[url]>URL</label>
