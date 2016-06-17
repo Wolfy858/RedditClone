@@ -6,11 +6,9 @@
       <button class="vote-button" type="submit" name="" value="false">\/</button>
 </form>
 </div>
-<% puts "=====================" %>
-<% unless @post.url == "" %>
+
 
   <a href="<%= @post.shortened_url.short_url %>"><%= @post.shortened_url.short_url %></a>
-<% end %>
 <p><%= @post.content %></p>
 
 
@@ -24,7 +22,7 @@
     <%= comment.content %>
     <p class="karma">Karma: <%= comment.karma %></p>
     <form action="/comments/<%= comment.id %>/votes" method="POST">
-      <button class="vote-button upvote-button" type="submit" name="upvote" value="true">/\</button>
+      <button style="background-color: #E97837;" class="vote-button upvote-button" type="submit" name="upvote" value="true">/\</button>
       <button class="vote-button" type="submit" name="upvote" value="false">\/</button>
     </form>
 

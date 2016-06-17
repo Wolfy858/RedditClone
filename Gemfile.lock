@@ -114,8 +114,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord (~> 4.2.0)
-  activesupport (~> 4.2.0)
+  activerecord (~> 4.2.6)
+  activesupport (~> 4.2.6)
   bcrypt
   bitly
   capybara
